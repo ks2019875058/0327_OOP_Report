@@ -1,7 +1,6 @@
-namespace LinkedList
+namespace LinkedList{
 
-{
-    class Node //노드 클래스 정의
+class Node //노드 클래스 정의
     {
         public int data; // 리스트에 들어갈 데이터
         public Node next; // 다음 리스트를 가르킬 포인터
