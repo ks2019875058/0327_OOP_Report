@@ -82,13 +82,13 @@ namespace LinkedList
             Node prevNode = null;
             if (changeNode == null && changeNode.data == data)
             {
-                First = changeNode.next;
+                First = changeNode.next; // 읽어올 노드를 노드의 다음으로 바꿈
                 return;
             }
             while (changeNode == null)
             {
                 prevNode = changeNode;
-                changeNode = changeNode.next;
+                changeNode = changeNode.next; // 덮어쓰기
             }
             prevNode.next = changeNode.next;
         }
@@ -96,10 +96,11 @@ namespace LinkedList
         public void listPrint()
         {
             for (Node node = First; node != null; node = node.next)
+            // 노드의 데이터가 null 이 아닐 때 반복
             {
-                Console.Write(node.data + " ");
+                Console.Write(node.data + " ");// 데이터 출력하고 한칸 띄움
             }
-            Console.WriteLine();
+            Console.WriteLine(); // 줄바꿈
         }
     }
 
@@ -109,14 +110,14 @@ namespace LinkedList
 
         public void push(int data)
         {
-            list.addFirst(data);
+            list.addFirst(data); // Stack push == LinkedList addFirst 
         }
 
         public int pop()
         {
-            int node = list.getFirst();
-            list.deleteFirst();
-            return node;
+            int node = list.getFirst(); // 퍼스트 가져온다
+            list.deleteFirst(); // 마지막을 지운다
+            return node; // 새로고침
         }
 
         public void stackPrint()
